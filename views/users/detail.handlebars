@@ -1,0 +1,9 @@
+<div class="item-page">
+  <h1>{{user.nome}}</h1>
+  <img src="/img/user/{{user.imagem}}" alt="{{user.nome}}">
+  <p>Descrição: {{user.descricao}}</p>
+  <a class="button" href="/users">Voltar</a>
+  <form style="display:inline-block; margin: 2px;" action="/users/remove/{{user._id}}" method="POST">
+    <input type="submit" class="button" value="Excluir">
+  </form>
+</div>

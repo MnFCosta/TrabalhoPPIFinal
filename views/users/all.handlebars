@@ -1,0 +1,14 @@
+<h1>Todos os Users</h1>
+<div class="items">
+  {{#each users}}
+    <div class="item">
+      <h3>{{this.nome}}</h3>
+      <img src="/img/user/{{this.imagem}}" alt="{{this.nome}}">
+      <p>Descrição: {{this.descricao}}</p>
+      <div class="actions">
+        <a href="/users/{{this._id}}" class="button">Detalhes</a>
+        <a href="/users/edit/{{this._id}}" class="button">Editar</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

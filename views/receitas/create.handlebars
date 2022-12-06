@@ -1,0 +1,22 @@
+<h1>Criar Receita</h1>
+
+<form action="/receitas/create" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Nome da Receita: </label>
+    <textarea class="form-control" name="nome" id="exampleFormControlTextarea1" rows="1"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Ingredientes: </label>
+    <textarea class="form-control" name="ingredientes" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descrição: </label>
+    <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Imagem: </label>
+    <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+
+  <input type="submit" class="button" value="Criar">
+</form>

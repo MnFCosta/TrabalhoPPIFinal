@@ -1,0 +1,21 @@
+<h1>Editar Usuário</h1>
+<form action="/users/edit" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="id" value={{user._id}}>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Nome do Usuário:</label>
+    <textarea class="form-control" name="nome"  id="exampleFormControlTextarea1" rows="1"> {{user.nome}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descrição:</label>
+    <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3"> {{user.descricao}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Imagem:</label>
+    <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+
+  <input type="submit" class="button" value="Confirmar Mudanças">
+</form>
+
+

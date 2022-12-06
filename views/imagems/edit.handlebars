@@ -1,0 +1,19 @@
+<h1>Editar Imagem</h1>
+<form action="/imagems/edit" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="id" value={{imagem._id}}>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Nome da Imagem:</label>
+    <textarea class="form-control" name="nome" value=""{{imagem.nome}} id="exampleFormControlTextarea1" rows="1"> {{imagem.nome}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descrição:</label>
+    <textarea class="form-control" name="descricao" value=""{{imagem.nome}} id="exampleFormControlTextarea1" rows="3"> {{imagem.descricao}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Imagem:</label>
+    <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+
+  <input type="submit" class="button" value="Confirmar Mudanças">
+</form>

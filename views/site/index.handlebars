@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.75, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Receitas & Fotos</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles2.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand">Receitas & Fotos </a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#top">Topo</a></li>
+          <li class="nav-item"><a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#modalMenu">Menu</a> </li>
+          <li class="nav-item"><a class="nav-link" href="#imagens">Imagens</a></li>
+          <li class="nav-item"><a class="nav-link" href="#users">Usuários</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Masthead-->
+  <header class="masthead" id="top">
+    <div class="container d-block ">
+      <div style="color:black" class="masthead-heading text-uppercase">Bem vindo!</div>
+      <div style="color:black" class="masthead-subheading">Receitas e fotos interessantes tudo em um só lugar!</div>
+    </div>
+  </header>
+
+  <!-- Services-->
+  <div class="modal" tabindex="-1" role="dialog" id="modalMenu">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center">
+          <h5 class="modal-title">Menu</h5>
+        </div>
+        <div class="modal-body">
+          <section class="page-section" id="menu">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-md-1" style="width: 8.499999995%">
+                </div>
+                <div class="col-md-5">
+                  <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4 class="my-3">Cadastro</h4>
+                  <a href="/users/create" class="button">Seja um usuario!</a><br>
+                  <a href="/imagems/create" class="button">Adicione uma foto!</a><br>
+                  <a href="/receitas/create" class="button">Adicione uma receita!</a>
+                </div>
+                <div class="col-md-5">
+                  <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4 class="my-3">Gerencie cadastros</h4>
+                  <a class="button" href="/users">Edite usuarios</a><br>
+                  <a class="button" href="/imagems">Edite imagens</a><br>
+                  <a class="button" href="/receitas">Edite receitas</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Receitas-->
+  <section class="page-section bg-light d-inline" id="imagens">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Receitas</h2>
+        <h3 class="section-subheading text-muted">Deliciosas!</h3>
+        <div class="row">
+          {{#each receitas}}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="portfolio-item">
+              <a id="teste" href="/receitas/{{this._id}}" class="button">
+                <img class="img-thumbnail" src="/img/receita/{{this.imagem}}" alt="{{this.nome}}">
+              </a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        <!-- Imagens-->
+        <section class="page-section bg-light d-inline" id="imagens">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="section-heading text-uppercase">Imagens</h2>
+              <h3 class="section-subheading text-muted">As melhores da web</h3>
+              <div class="row">
+                {{#each imagems}}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                  <div class="portfolio-item">
+                    <a id="teste" href="/imagems/{{this._id}}" class="button">
+                      <img class="img-thumbnail" src="/img/imagem/{{this.imagem}}" alt="{{this.nome}}">
+                    </a>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+
+              <!-- Usuários-->
+              <section class="page-section bg-light d-inline" id="users">
+                <div class="container">
+                  <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Nossos usuários</h2>
+                    <h3 class="section-subheading text-muted">Apenas os mais capacitados</h3>
+                    <div class="row">
+                      {{#each users}}
+                      <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                          <a id="teste" href="/users/{{this._id}}" class="button">
+                            <img class="img-thumbnail" src="/img/user/{{this.imagem}}" alt="{{this.nome}}">
+                          </a>
+                        </div>
+                      </div>
+                      {{/each}}
+                    </div>
+
+                    <!-- Footer-->
+                    <footer class="footer py-4">
+                      <div class="container">
+                        <div class="row align-items-center d-flex justify-content-center">
+                          <div class="col-lg-4 my-3 my-lg-0">Copyright &copy; Le Fishe au Chocolat Industries</div>
+                          {{!-- <div class="col-lg-4 my-3 my-lg-0">
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                          </div> --}}
+                          {{!-- <div class="col-lg-4 text-lg-end">
+                            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                          </div> --}}
+                        </div>
+                      </div>
+                    </footer>
+
+                    <!-- Bootstrap core JS-->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <!-- Core theme JS-->
+                    <script src="js/scripts.js"></script>
+                    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                    <!-- * *                               SB Forms JS                               * *-->
+                    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+                    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

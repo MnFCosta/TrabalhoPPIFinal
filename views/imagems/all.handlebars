@@ -1,0 +1,14 @@
+<h1>Todas as imagens</h1>
+<div class="items">
+  {{#each imagems}}
+    <div class="item">
+      <h3>{{this.nome}}</h3>
+      <img src="/img/imagem/{{this.imagem}}" alt="{{this.nome}}">
+      <p>Resumo: {{this.descricao}}</p>
+      <div class="actions">
+        <a href="/imagems/{{this._id}}" class="button">Detalhes</a>
+        <a href="/imagems/edit/{{this._id}}" class="button">Editar</a>
+      </div>
+    </div>
+  {{/each}}
+</div>
